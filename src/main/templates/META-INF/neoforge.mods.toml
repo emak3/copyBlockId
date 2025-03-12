@@ -1,0 +1,41 @@
+modLoader = "javafml" #mandatory
+
+loaderVersion = "${loader_version_range}" #mandatory
+
+license = "${mod_license}"
+
+[[mods]] #mandatory
+
+modId = "copy_block_id" #mandatory
+
+version = "${mod_version}" #mandatory
+
+displayName = "${mod_name}" #mandatory
+
+authors = "${mod_authors}" #optional
+
+description = '''${mod_description}'''
+
+[[dependencies.copy_block_id]] #optional
+
+modId = "neoforge" #mandatory
+
+type = "required" #mandatory
+
+versionRange = "${neo_version_range}" #mandatory
+
+ordering = "NONE"
+
+side = "CLIENT"
+
+[[dependencies.copy_block_id]]
+
+modId = "minecraft"
+
+type = "required"
+
+versionRange = "${minecraft_version_range}"
+
+ordering = "NONE"
+
+side = "CLIENT"

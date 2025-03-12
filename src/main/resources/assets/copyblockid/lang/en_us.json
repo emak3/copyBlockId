@@ -1,0 +1,5 @@
+{
+  "itemGroup.testmod": "Example Mod Tab",
+  "block.testmod.example_block": "Example Block",
+  "item.testmod.example_item": "Example Item"
+}
