@@ -15,7 +15,6 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.common.NeoForge;
 
-
 import java.util.HashSet;
 import java.util.Set;
 import java.util.StringJoiner;
@@ -67,10 +66,10 @@ public class copyBlockId {
                     for (String id : tempBlockIds) {
                         joiner.add(id);
                     }
-
+                    Component message = Component.translatable("copy_block_id.message.recording");
+                    Component recordingContext = Component.empty().append(message).append(joiner.toString());
                     // 現在の一時リストを表示
-                    event.getEntity().displayClientMessage(
-                            Component.literal("記録中のブロックID: " + joiner),true);
+                    event.getEntity().displayClientMessage(recordingContext,true);
                 } else {
                     if (isShiftKeyPressed) {
                         // シフトキーが離されたときの処理
@@ -103,8 +102,10 @@ public class copyBlockId {
                     // GLFWを使ってクリップボードにコピーする
                     copyToClipboardWithGLFW(content);
 
-                    Minecraft.getInstance().player.displayClientMessage(
-                            Component.literal("(クリップボードにコピーしました): " + content ), true);
+                    Component message = Component.translatable("copy_block_id.message.copied");
+                    Component copiedContext = Component.empty().append(message).append(content);
+
+                    Minecraft.getInstance().player.displayClientMessage(copiedContext, true);
 
                     tempBlockIds.clear();
                 }
